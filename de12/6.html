@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    
+    <title>第６回</title>
+   
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <h1>可能性の模索</h1>
+
+
+    <h3>作ってみたいもの（グループ）</h3>
+
+  <div>  <ul>
+        <li>TODOリスト</li>
+        <li>画像の自動サイズ変更</li>
+        <li>給料計算</li>
+        <li>参考文献の自動入力</li>
+        <li>プッシュの短縮化</li>
+    </ul></div>
+
+    <h3>TODOリスト</h3>
+
+    <div>私はTODOリストを作ってみることにした。<br>
+    これはテキストに予定を「●,●,●,」と打つとリスト化してくれる。<br>
+    反省点はリストにチェックをつけたり消すことができるようにしたかったが、kinterのやり方が多く乗っていたため<br>
+    試しても機能しないものがあったりと、導入することができなかった。<br>
+    しかし、TODOリストとしてタブを移動させることができるのでデスクトップにおいておくと見やすいのではないかと考えた。</div>
+
+    <h3>使用動画</h3>
+    <a href="https://youtu.be/TCIhI9MDTsA">YouTube</a>
+
+    <h3>ソースコード</h3>
+    <div><code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;">import tkinter as tk</li>
+        <li style="background-color:#EFF;">import tkinter.ttk as ttk</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;"># csvファイルの読み込み</li>
+        <li style="background-color:#EFF;">import csv</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">sch=[]</li>
+        <li style="background-color:#EEF;">filename = 'sch.csv'</li>
+        <li style="background-color:#EFF;">with open(filename, encoding='utf8', newline='') as f:</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;csvreader = csv.reader(f)</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;for row in csvreader:</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sch.append(row)</li>
+        <li style="background-color:#EFF;"></li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;"># print(sch[0][1])</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">main_win = tk.Tk()</li>
+        <li style="background-color:#EEF;">main_win.title("To Doリスト")</li>
+        <li style="background-color:#EFF;">main_win.geometry("400x300")</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">tree = ttk.Treeview(main_win)</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;"># 列を作成（３列）</li>
+        <li style="background-color:#EEF;">tree["columns"] = (1,2,3)</li>
+        <li style="background-color:#EFF;"># ヘッダーの設定</li>
+        <li style="background-color:#EEF;">tree["show"] = "headings"</li>
+        <li style="background-color:#EFF;">tree.heading(1,text="期限")</li>
+        <li style="background-color:#EEF;">tree.heading(2,text="タイトル")</li>
+        <li style="background-color:#EFF;">tree.heading(3,text="詳細")</li>
+        <li style="background-color:#EEF;"># 各列の幅設定</li>
+        <li style="background-color:#EFF;">tree.column(1,width=100)</li>
+        <li style="background-color:#EEF;">tree.column(2,width=100)</li>
+        <li style="background-color:#EFF;">tree.column(3,width=300)</li>
+        <li style="background-color:#EEF;"># データ挿入</li>
+        <li style="background-color:#EFF;">for s in sch:</li>
+        <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print(s)</li>
+        <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;tree.insert("", "end", values=(s[0], s[1], s[2]))</li>
+        <li style="background-color:#EEF;"># tree.insert("", "end", values=("4/22", "書類作成", "審査に必要な書類を完成させる"))</li>
+        <li style="background-color:#EFF;"># tree.insert("", "end", values=("4/29", "書類提出", "書類を郵便で送る"))</li>
+        <li style="background-color:#EEF;"># 表の配置</li>
+        <li style="background-color:#EFF;">tree.pack()</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;">main_win.mainloop()</li>
+        <li style="background-color:#EEF;"></li>
+        <li style="background-color:#EFF;"></li>
+        </ol></code></div>
+
+</body>
+</html>
