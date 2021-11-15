@@ -32,7 +32,7 @@
         
         利便性を考え大学だけではなく東京にも気軽に行けるエリアがいいのではないかと考えた。<br>
 
-        <a href="http://www.takeda2001.jp/image/040401line_map.gif">路線図</a><br>
+        <a href="http://www.takeda2001.jp/image/040401line_map.gif">路線図（外部サイト）</a><br>
 
         この画像より東急東横線は渋谷まで繋がっているので東急東横線の駅周辺で探そうと考えた。<br>
         </div>
@@ -43,11 +43,47 @@
         この画像よりあまり大差はなかった。しかし横浜駅と反町駅が一番合計時間が短い。
         なので横浜駅の家賃や間取りなどについて調べてみることにした。</div><br>
 
+        <img src="images/Figure_1.png"width="40%"><br>
+        エリア全体のワンルームの家賃の相場を調べたところ４〜６万円が多かった。<br>
+        横浜エリアでもこの範囲に値する家が存在するので横浜エリアに絞ることにした。<br>
+
         <img src="images/deFigure_madoriyatinn.png"width="40%">
         
         <img src="images/deFigure_goukeizikanyatin.png"width="40%"><br>
         大学生の多くは一人暮らしなのでワンルームや１LDKの家は５万円以下で住める家もあるので良いのではないかと考えた。<br>
         また１０分以内で着く場所も多くあるので横浜駅がおすすめのエリアである。
+
+
+
+        <h3>ソースコード</h3>
+
+            <div><code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">mask=(df_data["間取り"]=="ワンルーム")</li>
+                <li style="background-color:#EEF;">df_selected_roomtype=df_data[mask]</li>
+                <li style="background-color:#EFF;">df_selected_roomtype.loc[:, "家賃"].hist(range=(0,20),bins=40)</li>
+                <li style="background-color:#EEF;">plt.xlabel("ワンルーム家賃(万円)") # 横軸のラベル</li>
+                <li style="background-color:#EFF;">plt.ylabel("件数") # 縦軸のラベル</li>
+                <li style="background-color:#EEF;">plt.xlim(0, 16)</li>
+                <li style="background-color:#EFF;">plt.title("ワンルーム家賃のヒストグラム") # グラフのタイトル</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                <li style="background-color:#EFF;">-------------------</li>
+                <li style="background-color:#EEF;">mask = df_data["路線"] == "東急東横線"</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">df_data[mask].plot.scatter(x="駅", y="合計時間")</li>
+                <li style="background-color:#EFF;">plt.show()</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">mask = df_data["路線"] == "東急東横線"</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">df_data[mask].plot.scatter(x="駅", y="家賃")</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">df_data[mask].plot.scatter(x="家賃", y="間取り")</li>
+                <li style="background-color:#EFF;">plt.show()</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">df_data[mask].plot.scatter(x="家賃", y="合計時間")</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                </ol></code></div>
      
 
 
