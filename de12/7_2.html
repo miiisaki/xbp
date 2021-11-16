@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    
+    <title>第７回　改訂版</title>
+   
+    <link rel="stylesheet" href="css/style.css">
+    <style>body{background-color:rgba(238, 237, 237, 0.911);
+        text-align: center;}
+        h2{color:coral;}</style>
+
+   
+</head>
+<body>
+
+    <h1>データサイエンス（改訂版）</h1>
+
+    <div>第７回のを横浜駅以外で再度調べた。</div>
+
+    <h3>おすすめのエリアについて</h3>
+    <div>私は家賃と合計時間からおすすめのエリアについて調べようと考えた。</div><br>
+    <img src="images/de7_1.png"width="40%">
+    <img src="images/de7_2.png"width="40%">
+    <h3>合計時間　　　　　　　　　　　　　　　　　　　　　　　　　　　家賃</h3><br>
+
+    <div>この二つの画像から湘南新宿ライン高崎線が家賃が低く合計時間が少ないことが読み取れた。<br>
+        <a href="https://lh3.googleusercontent.com/proxy/0WhmtZn6-Nhy9JNbcJsDLvyOF3Yupel4G-zfapoPa1lZ3rAK0iDev7jVZ_tU-TUJRxsIrcb5BBucq4BrpjIi3KfT_fpYb7H_WHctrOg">湘南新宿ライン　路線図</a><br>
+        　次に湘南新宿ラインでの駅ごとに比較をしてみた。
+    </div>
+    <img src="images/de7_6.png"width="40%">
+    <img src="images/de7_5.png"width="40%">
+    <h3>合計時間　　　　　　　　　　　　　　　　　　　　　　　　　　　家賃</h3><br>
+
+    <div>このグラフから家賃が一番低い駅が戸塚駅で合計時間が一番低い駅は横浜駅だった。<br>
+        ここから私は戸塚駅に注目して考えようと思う。<br>
+        そこで間取りについて調べてみようと考えた。</div><br>
+
+    
+    <img src="images/de7_3.png"width="40%">
+    <img src="images/de7_4.png"width="40%">
+
+        <h3>戸塚駅　　　　　　　　　　　　　　　　　　　　　　　　　　全体</h3><br>
+
+        <div>戸塚駅と全体での間取りについて調べてみたところ戸塚駅周辺の家賃は平均と比べて少し高いことがわかる。<br>
+            しかし、全体との差はあまり大きくないので私は戸塚駅がおすすめエリアであると考えた。</div><br>
+            <div>また戸塚駅について調べたところこのエリアの中では比較的治安が良く、<br>
+                駅周辺の開発も近年進んできており女性の方でも暮らしやすいエリアとなっていた。</div>
+            <div><a href="https://woman.chintai/article/town/1632_totsuka-living-alone/#:~:text=%E6%88%B8%E5%A1%9A%E9%A7%85%E3%81%8C%E3%81%82%E3%82%8B%E6%A8%AA%E6%B5%9C,%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%A7%E3%81%99%E3%81%AD%E3%80%82&text=%E8%BB%8A%E3%81%AE%E9%80%9A%E3%82%8A%E3%82%82%E5%A4%9A%E3%81%8F,%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%BE%E3%81%97%E3%82%87%E3%81%86%E3%80%82">参考サイト</a></div>
+
+            
+            <h3>おすすめエリア</h3>
+            <h2>戸塚駅</h2>
+
+            <h3>ソースコード</h3>
+
+
+            <div><code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">import pandas as pd  # データ分析に用いるライブラリ</li>
+                <li style="background-color:#EEF;">import matplotlib.pyplot as plt  # グラフ表示に用いるライブラリ</li>
+                <li style="background-color:#EFF;">pd.set_option('display.unicode.east_asian_width', True)  # 表示のずれを少し緩和</li>
+                <li style="background-color:#EEF;">plt.rcParams['font.family'] = 'IPAexGothic'  # グラフ表示におけるフォントの指定</li>
+                <li style="background-color:#EFF;">plt.rcParams['font.size'] = 6  # グラフ表示におけるフォントの指定</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">data_path = "./data.csv"</li>
+                <li style="background-color:#EEF;">df_data = pd.read_csv(data_path,  encoding="utf-8-sig")</li>
+                <li style="background-color:#EFF;">#</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">df_data.loc[:, "路線"].hist()</li>
+                <li style="background-color:#EFF;">plt.xlabel("路線")  # 横軸のラベル</li>
+                <li style="background-color:#EEF;">plt.ylabel("家賃")  # 縦軸のラベル</li>
+                <li style="background-color:#EFF;">plt.title("路線のヒストグラム")  # グラフのタイトル</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">df_data.groupby("路線").mean().loc[:,"家賃"].sort_values()[:10].plot.bar(figsize = (10,8))</li>
+                <li style="background-color:#EFF;">plt.subplots_adjust(left=0.02,right=0.98,bottom=0.3)</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">print(df_data.groupby("路線").mean().loc[:,"家賃"].sort_values()[:10])</li>
+                <li style="background-color:#EEF;">df_data.groupby("路線").mean().loc[:,"家賃"].sort_values()[:10].plot.bar(figsize = (10, 8))</li>
+                <li style="background-color:#EFF;">plt.subplots_adjust(left=0.02,right=0.98,bottom=0.3)</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                <li style="background-color:#EFF;"># 路線と家賃の平均のグラフ</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">print(df_data.groupby("路線").mean().loc[:,"合計時間"].sort_values()[:10])</li>
+                <li style="background-color:#EFF;">df_data.groupby("路線").mean().loc[:,"合計時間"].sort_values()[:10].plot.bar(figsize = (10, 8))</li>
+                <li style="background-color:#EEF;">plt.subplots_adjust(left=0.02,right=0.98,bottom=0.3)</li>
+                <li style="background-color:#EFF;">plt.show()</li>
+                <li style="background-color:#EEF;"># 路線と合計時間の平均のグラフ</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">mask = (df_data["路線"] == "湘南新宿ライン高海")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">df_mean = df_data[mask].groupby("駅").mean()</li>
+                <li style="background-color:#EFF;">x = df_mean.index</li>
+                <li style="background-color:#EEF;">y = df_mean.loc[:, "家賃"]</li>
+                <li style="background-color:#EFF;">plt.bar(x, y)</li>
+                <li style="background-color:#EEF;">plt.xlabel("駅")</li>
+                <li style="background-color:#EFF;">plt.ylabel("家賃")</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                <li style="background-color:#EFF;"># 高崎線の駅ごとの家賃の平均</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">df_mean = df_data[mask].groupby("駅").mean()</li>
+                <li style="background-color:#EEF;">x = df_mean.index</li>
+                <li style="background-color:#EFF;">y = df_mean.loc[:, "合計時間"]</li>
+                <li style="background-color:#EEF;">plt.bar(x, y)</li>
+                <li style="background-color:#EFF;">plt.xlabel("駅")</li>
+                <li style="background-color:#EEF;">plt.ylabel("合計時間")</li>
+                <li style="background-color:#EFF;">plt.show()</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"># 高崎線の駅ごとの合計時間の平均</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">print(df_data.groupby("間取り").mean().loc[:,"家賃"].sort_values()[:10])</li>
+                <li style="background-color:#EEF;">df_data.groupby("間取り").mean().loc[:,"家賃"].sort_values()[:10].plot.bar(figsize = (10, 8))</li>
+                <li style="background-color:#EFF;">plt.subplots_adjust(left=0.02,right=0.98,bottom=0.3)</li>
+                <li style="background-color:#EEF;">plt.show()</li>
+                <li style="background-color:#EFF;"># 間取りごとの家賃の平均</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">mask = (df_data["駅"] == "戸塚駅")</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">df_mean = df_data[mask].groupby("間取り").mean()</li>
+                <li style="background-color:#EEF;">x = df_mean.index</li>
+                <li style="background-color:#EFF;">y = df_mean.loc[:, "家賃"]</li>
+                <li style="background-color:#EEF;">plt.bar(x, y)</li>
+                <li style="background-color:#EFF;">plt.xlabel("間取り")</li>
+                <li style="background-color:#EEF;">plt.ylabel("家賃")</li>
+                <li style="background-color:#EFF;">plt.show()</li>
+                <li style="background-color:#EEF;"># 戸塚駅の間取りの家賃の平均</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                </ol></code></div>
+
+
+
+            
+
+
+
+
+    <style>a:hover{color: green;
+        font-weight: bold;}
+        h1{border-bottom:double;
+border-color: darkseagreen;
+border-width: 3px;}    
+    </style>
+  
+  
+
+</body>
+</html>
