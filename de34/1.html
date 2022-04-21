@@ -35,6 +35,8 @@
             <h2><span>マイコンボードについて</span></h2>
         </header>
 
+        
+
         <div style="text-align: center;">使用したもの<br>
              ・<a href="https://www.amazon.co.jp/s?k=arduino&i=industrial&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&ref=nb_sb_noss_1">Arduino UNO</a>(外部サイト)
             <br><br>
@@ -47,12 +49,49 @@
                 Arduinoは動作に必要な開発システムをArduinoのWevサイトからダウンロードできるオープンソースハードウェア。<br>
                 AVRマイコンや入出力ポート、Arduino言語による統合開発環境が用意されており、すぐに電子工作を始められる手軽さから世界中で人気を集めている。<br><br>
 
-            <h3>マイコンボードでできること</h3><br><br>
+            <h2><span>マイコンボードでできること</span></h2>
+            
 
-            <h4>①Lチカ</h4>
+            <h4 style="font-size: x-large;">①Lチカ</h4>
                 <h5>・使うもの　<a href="https://akizukidenshi.com/catalog/g/gI-16692/">LED(外部サイト)</a></h5><br>
-                LEDは長い方が＋、短い方が-<br>
-                +はアノード、-はカソードという。
+                    <p>LEDは長い方が＋、短い方が-<br>
+                    +はアノード、-はカソードという。</p><br>
+
+                <h5>配線</h5>
+                    <p>LEDの＋を十三番ピン、ーをGND（グランド）につなげる。<br>
+                    GNDとは電気回路で基準電位との電位差が０Vである部分のこと。</p><br>
+
+                <h5>Lチカプログラム</h5>
+                    <img src="images/1_1.png"width="30%"><br><br>
+
+
+            <h4 style="font-size: x-large;">②明るさセンサー</h4>
+                <h5>・使うもの <a href="https://akizukidenshi.com/catalog/g/gI-00110/">CdSセル（外部サイト）</a>、
+                            <a href="https://akizukidenshi.com/catalog/g/gR-25103/">10kΩ抵抗（外部サイト）</a></h5><br>
+                
+                <h5>配線</h5>
+                    <a style="color:crimson">ブレッドボード</a>を使ってArduinoの5Vー10kΩの抵抗ーCdSセルーArduinoのGNDの流れができるような配線する。<br>
+                        その後、10kΩの抵抗とCdSセルが繋がっている列からArduinoのA1ピンに配線する。<br>
+                        <a style="color:crimson">ブレッドボード</a>は、各種電子部品やジャンパ線をボードの穴に差し込むだけで、 はんだ付けをしなくても、手軽に電子回路を組むことの出来る基板。
+                        <a href="http://www.ee.ibaraki.ac.jp/09student/Lectures/KisoDenki/BB/BB-intro.html">(引用)</a><br><br>
+
+                <h5>プログラム</h5>
+                    <img src="images/1_2.png"width="30%"><br><br>
+                
+            <h4 style="font-size: x-large;">③シリアルモニタと応用</h4>
+                    シリアルモニタを確認すると暗くなると数値が大きくなる。<br>
+                    これを応用して暗くなるとLEDが光るプログラムを作成する。<br><br>
+
+                <h5>プログラム</h5>
+                    <img src="images/1_3.png"width="30%"><br>
+                    val=analogRead(1);はアナログ１番ピン(A1)の値を読むことを意味しています。<br>
+                    また、デジタルは01の世界と言われており、Arduinoの例でいうと0=0V(LOW)、1=5V(HIGH）。<br>
+                    0→0V<br>
+                    1023→5V<br>
+
+                
+
+
 
 
 
