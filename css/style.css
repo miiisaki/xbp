@@ -48,7 +48,7 @@ p{
 }
 span.blackback{
     text-indent: 3em;
-    background: #393939;
+    background: #f9edb9;
     color: #efefef;
 }
 
@@ -74,7 +74,7 @@ body{
 	-webkit-text-size-adjust:100%;
 	overflow-x: hidden;
 	color: #000;
-	background: #d7d7d7;
+	background: #f9edb9;
 }
 
 a{
@@ -414,7 +414,7 @@ section h2 span {
   	width: 18px;
   	height: 2px;
   	margin: -1px 0 0 -7px;
-  	background: #000;
+  	background: #f9edb9;
   	transition: .2s;
 	}
 
@@ -426,7 +426,7 @@ section h2 span {
   	left: 0;
   	width: 18px;
   	height: 2px;
-  	background: #000;
+  	background: #f9edb9;
   	transition: .3s;
 	}
 
