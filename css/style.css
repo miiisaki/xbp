@@ -1,524 +1,273 @@
 @charset "utf-8";
-/* 冒頭でimport */
-@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
-/* フォントを指定したいところで */
-
-logo img{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover; /* 画像のトリミング */
-}
-
-logotohome img{
-    border-radius: 70%;
-    width: 70px;
-    height: 70px;
-    object-fit: cover; /* 画像のトリミング */
-}
 
 
+/*PC・タブレット・スマホ(全端末)共通設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* ========== common ========== */
-html, body {
-	font-size: 16px;
-	font-family: sans-serif;
-	color: #393939;
-    margin-left: 15px;
-    margin-bottom: 40px;
-	background: #efefef;
+/*全体の設定
+---------------------------------------------------------------------------*/
+body {
+	margin: 0px;
+	padding: 0px;
+	-webkit-text-size-adjust: none;
+	color: #999;	/*全体の文字色*/
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 16px;	/*文字サイズ*/
+	line-height: 2;		/*行間*/
+	background: #fff;	/*背景色*/
 }
-h1{
-    text-indent: 0em;
-}
-h2{
-    margin-left: 1em;
-    margin-top: 1em;
-}
-h3{
-    margin-left: 2em;
-}
-div{
-    margin-top: 1em;
-    margin-left: 3em;
-}
-p{
-    margin-left: 3em;
-}
-span.blackback{
-    text-indent: 3em;
-    background: #f9edb9;
-    color: #efefef;
-}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form,select,input,textarea {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+ul {list-style-type: none;}
+ol {padding-left: 40px;padding-bottom: 15px;}
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+iframe {width: 100%;}
 
-
-@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
-
-/* reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
-address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;}
-ul{list-style:none;}
-table{border-collapse:collapse;border-spacing:0;}
-caption,th{text-align:left;}
-q:before,q:after{content:'';}
-object,embed{vertical-align:top;}
-legend{display:none;}
-h1,h2,h3,h4,h5,h6{font-size:100%;}
-img,abbr,acronym,fieldset{border:0;}
-
-body{
-	font: 14px/1.9 'Noto Sans JP', Arial, Verdana, 游ゴシック, YuGothic,'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
-	font-weight: 300;
-	-webkit-text-size-adjust:100%;
-	overflow-x: hidden;
-	color: #000;
-	background: #f9edb9;
+/*リンク（全般）設定
+---------------------------------------------------------------------------*/
+a {
+	color: #999;	/*リンクテキストの色*/
+	transition: 0.3s;	/*マウスオン時の移り変わるまでの時間設定。0.3秒。*/
+}
+a:hover {
+	color: #b4ae99;	/*マウスオン時の文字色*/
 }
 
-a{
-	color: #0066ff;
+/*コンテナー（ホームページを囲む一番外側のブロック）
+---------------------------------------------------------------------------*/
+#container {
+	max-width: 1400px;	/*ブロックの最大幅*/
+	margin: 0 auto;
+	padding: 0 3%;
+}
+
+/*ヘッダー（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+/*headerブロック*/
+header {
+	text-align: center;	/*内容を中央よせ*/
+}
+/*ロゴ画像設定*/
+#logo img {
+	width: 400px;	/*画像幅*/
+	margin: 40px auto 40px;	/*ロゴの上と下に40pxスペースを空ける設定*/
+}
+
+/*トップページのメイン画像
+---------------------------------------------------------------------------*/
+/*画像ブロック*/
+#mainimg img {
+	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
+	margin-bottom: 40px;	/*下に空けるスペース*/
+}
+
+/*メニュー
+---------------------------------------------------------------------------*/
+/*メニュー全体を囲むブロック*/
+#menubar {
+	text-align: center;		/*文字をセンタリング*/
+	font-size: 18px;		/*文字サイズ*/
+	margin-bottom: 40px;	/*下に空けるスペース*/
+}
+/*メニュー１個あたりの設定*/
+#menubar li {
+	display: inline;	/*横並びにする設定*/
+}
+#menubar li a {
 	text-decoration: none;
+	padding: 15px 30px;	/*各メニュー内の余白。上下に15px、左右に30pxあけるという意味。*/
+}
+/*マウスオン時の設定*/
+#menubar li a:hover {
+	color: #b4ae99;	/*文字色*/
+	border-bottom: 4px solid #b4ae99;	/*下線の幅、線種、色*/
 }
 
-a:hover, .active{
-  text-decoration: underline;
-}
-
-a:active, a:focus,input:active, input:focus{outline:0;}
-
-
-/* ヘッダー
-------------------------------------------------------------*/
-#header{
-	text-align: center;
-}
-
-#header h1{
-	padding-top: 60px;
-}
-
-#mainnav a{
-	color: #000;
-}
-
-#mainImg{
-	position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 528px;
-}
-
-#mainImg img{
-	position: absolute;
-  left: 50%;
-	max-width: 1280px;
-  width: 1280px;
-  height: 528px;
-  margin-left: -640px;
-}
-
-
-/* フッター
-------------------------------------------------------------*/
-#footer{
+/*コンテンツ（見出しバーや文字などが入っているブロック）
+---------------------------------------------------------------------------*/
+/*コンテンツのh2タグの設定*/
+#contents h2 {
 	clear: both;
-	padding: 50px 10px 50px 0;
-	text-align: center;
-	font-size: 12px;
+	margin-bottom: 20px;
+	color: #fff;		/*文字色*/
+	padding: 10px 20px;	/*上下、左右への余白*/
+	background: #b4ae99;	/*背景色*/
+	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
+}
+/*コンテンツのh3タグの設定*/
+#contents h3 {
+	clear: both;
+	margin-bottom: 20px;
+	padding: 8px 20px;	/*上下、左右への余白*/
+	background: #fff;	/*背景色*/
+	border: 1px solid #999;	/*枠線の幅、線種、色*/
+	border-radius: 10px;	/*角を丸くする指定。この１行を削除すれば角丸がなくなります。*/
+}
+/*コンテンツのp(段落)タグ設定*/
+#contents p {
+	padding: 0px 20px 20px;	/*上、左右、下への余白*/
+}
+/*他。微調整。*/
+#contents p + p {
+	margin-top: -5px;
+}
+#contents h2 + p,
+#contents h3 + p {
+	margin-top: -10px;
+}
+#contents section + section {
+	margin-top: 30px;
 }
 
-
-/* 共通
-------------------------------------------------------------*/
-
-img{
-	max-width: 100%;
-	height: auto;
+/*Galleryページ
+---------------------------------------------------------------------------*/
+/*各ブロックごとの設定*/
+.list {
+	overflow: hidden;
+	border-bottom: 1px solid #999;	/*下線の幅、線種、色*/
+	padding: 20px;	/*ボックス内の余白*/
 }
-
-section{
-	clear:both;
-	padding-top: 70px;
+/*h4見出しの設定*/
+.list h4 {
+	color: #b4ae99;	/*文字色*/
 }
-
-section h2{
-	font-family: 'Pacifico', cursive;
-	width: 60%;
-	margin: 0 auto 40px;
-	font-size: 22px;
-	font-weight:normal;
-	text-align: center;
-	background: url(../images/borderBlack.png) repeat-x 0 50%;
-	background-size: 1px 1px;
+/*画像の設定*/
+.list img {
+	width: 20%;			/*画像幅*/
+	float: left;		/*画像を左に回り込み*/
+	margin-right: 3%	/*画像の右側に空けるスペース*/
 }
-
-section h2 span {
-	background: #d7d7d7;
-	padding: 0 80px;
-}
-
-.inner{
-	width: 94%;
-	margin: 0 auto;
-	padding-bottom: 50px;
-}
-
-.innerS{
-	width: 60%;
-	margin: 0 auto;
-	padding-bottom: 80px;
-}
-
-
-/* SEC01 Gallery
-------------------------------------------------------------*/
-#sec01{
+/*段落タグ*/
+.list p {
 	padding: 0 !important;
 }
 
-
-
-#gallery li{
-	float: left;
-	width: calc(100%/3);
-	line-height: 0;
+/*フッター(ページ最下部のcopyrightのパーツ)設定
+---------------------------------------------------------------------------*/
+footer {
+	clear: both;
+	text-align: center;	/*文字をセンタリング*/
+	padding: 30px 0px 10px;	/*上、左右、下へのボックス内の余白*/
 }
-
-#gallery img{
-	width: 100%;
-	height: auto;
+footer a {
+	text-decoration: none;
+	border: none;
 }
-
-/* SEC02 DE12
-------------------------------------------------------------*/
-#sec02 img{
-	width:100%;
-	margin-bottom: 30px;
-}
-
-
-/* SEC03 DE34
-------------------------------------------------------------*/
-#sec03 img{
-	width: 100%;
-	margin-bottom: 30px;
-}
-
-
-/* SEC04 DE56
-------------------------------------------------------------*/
-#sec04 img{
-	width: 100%;
-	margin-bottom: 30px;
-}
-
-/* SEC05 DEFAB
-------------------------------------------------------------*/
-.col3 img{
+footer .pr {
 	display: block;
-	margin: 0 auto 5px;
 }
 
-.col3 li{
-	line-height: 2.0;
+/*トップページ内「更新情報・お知らせ」ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体の設定*/
+#new dl {
+	padding: 0px 20px;	/*上下、左右へのブロック内の余白*/
+	margin-bottom: 20px;	/*ブロックの下(外側)に空ける余白*/
+}
+/*日付設定*/
+#new dt {
+	font-weight: bold;	/*太字にする設定。標準がいいならこの行削除。*/
+	float: left;
+	width: 8em;
+}
+/*記事設定*/
+#new dd {
+	padding-left: 8em;
 }
 
-.col3 .img{
-	padding: 80px 50px;
-	margin-bottom: 40px;
-	line-height: 0 !important;
-	background: #f6f6f6;
+/*テーブル
+---------------------------------------------------------------------------*/
+/*テーブル１行目に入った見出し部分（※caption）*/
+.ta1 caption {
+	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
+	border-bottom: none;	/*下線だけ消す*/
+	text-align: left;		/*文字を左寄せ*/
+	background: #eee;		/*背景色*/
+	font-weight: bold;		/*太字に*/
+	padding: 10px;			/*ボックス内の余白*/
 }
-
-#sec04_02{
-	background: url(../images/bgSec04.jpg) no-repeat 100% 100% fixed;
-	background-size: cover;
-	-webkit-background-size: cover;
-	text-align: center;
-	padding: 220px 20px;
-}
-
-#sec04_02 img{
+/*テーブル１行目に入った見出し部分（※tamidashi）*/
+.ta1 th.tamidashi {
 	width: auto;
+	text-align: left;	/*左よせ*/
+	background: #eee;	/*背景色*/
 }
-
-
-/* SEC05 COMPANY
-------------------------------------------------------------*/
-#sec05 p{
-	margin-bottom: 5px;
-}
-
-.col2 li{
-	display: inline-block;
+/*ta1テーブルブロック設定*/
+.ta1 {
+	table-layout: fixed;
 	width: 100%;
-	margin: 20px 0;
+	margin: 0 auto 20px;
+}
+.ta1, .ta1 td, .ta1 th {
+	word-break: break-all;
+	border: 1px solid #999;	/*テーブルの枠線の幅、線種、色*/
+	padding: 10px;			/*テーブル内の余白*/
+}
+/*テーブルの左側ボックス*/
+.ta1 th {
+	text-align: center;	/*センタリング*/
+	width: 30%;			/*幅*/
 }
 
-#sns img{
-	padding: 35px 10px 5px 0;
+/*トップページのNEWアイコン
+---------------------------------------------------------------------------*/
+.newicon {
+	background: #F00;	/*背景色*/
+	color: #FFF;		/*文字色*/
+	font-size: 70%;
+	line-height: 1.5;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+	vertical-align: text-top;
 }
 
-#sns a:hover img{
-	opacity: .8;
+/*その他
+---------------------------------------------------------------------------*/
+.look {background: #e5e5e5;padding: 5px 10px;border-radius: 4px;}
+.mb15,.mb1em {margin-bottom: 15px;}
+.color1 {color: #b4ae99;}
+.pr {font-size: 12px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.c {text-align: center;}
+.r {text-align: right;}
+.l {text-align: left;}
+
+
+
+/*画面幅580px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:580px){
+
+/*全体の設定
+---------------------------------------------------------------------------*/
+body {
+	font-size: 12px;	/*文字サイズ*/
+	line-height: 1.5;	/*行間*/
 }
 
-#map{
-	position: relative;
-	padding-bottom: 75%;
-	height: 0;
-	overflow: hidden;
-	z-index: 0;
+/*メニュー
+---------------------------------------------------------------------------*/
+/*メニュー１個あたりの設定*/
+#menubar li {
+	display: block;	/*縦並びにする設定*/
+	margin-bottom: 10px;
+}
+#menubar li a {
+	text-decoration: none;
+	padding: 8px 30px;	/*各メニュー内の余白。*/
 }
 
-#map iframe{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100% !important;
-	height: 100% !important;
-	border: 0;
+/*Galleryページ
+---------------------------------------------------------------------------*/
+/*各ブロックごとの設定*/
+.list {
+	padding: 10px;	/*ボックス内の余白*/
 }
 
+/*その他
+---------------------------------------------------------------------------*/
+.ws,.wl {width: 94%;}
 
-
-/* RESPONSIVE 設定
-------------------------------------------------------------*/
-
-@media only screen and (min-width: 1200px){
-	.inner{
-		width: 1024px;
-	}
-}
-
-@media only screen and (min-width: 800px){
-	body{
-		font-size:14px;
-	}
-	
-  a#menu{
-		display:none;
-	}	
-
-	.panel{
-		display:block !important;
-	}
-
-	#mainnav li{
-		display: inline-block;
-		padding: 50px 25px;
-		font-size: 15px;
-	}
-	
-	
-	/* SEC03 PROJECT
-	-----------------*/
-	.col3{
-		text-align: center;
-	}
-
-	.col3 li{
-		display: inline-block;
-		width: 28%;
-		padding: 0 2.5% 50px;
-		margin-bottom: 0;
-		vertical-align: top;
-		text-align: left;
-	}
-	
-  #footer{
-		padding: 30px 10px 70px 0;
-	}
-}
-
-
-@media only screen and (min-width: 641px){
-	.col2 li{
-		width: 60%;
-		vertical-align: top;
-	}
-	.col2 li:first-child{
-		width: 35%;
-		padding-right: 4%;
-	}
-}
-
-@media only screen and (max-width: 640px){
-	.innerS{
-		width: 94%;
-		padding-bottom: 70px;
-	}
-	.col3 li{
-		line-height: 1.7;
-	}
-	.col3 img{
-		margin: 0 auto;
-	}
-	.col3 .img{
-		padding: 30px;
-		margin-bottom: 20px;
-	}
-	#gallery li{
-		float: none;
-		width: 100%;
-	}
-	#map iframe{
-		width: 96% !important;
-		left: 2%;
-	}
-	#sec04_02{
-		padding: 50px 20px;
-	}
-}
-
-@media only screen and (max-width: 799px){
-	#header{
-		position: fixed;
-		width: 100%;
-		z-index: 500;
-	}
-	
-	#headerWrap{
-		position: relative;
-		width: 100%;
-		height: 70px;
-		background: #d7d7d7;
-		border-bottom: 1px solid #ccc;
-	}
-	
-	#header h1{
-		padding-top: 10px;
-	}
-	
-	#header h1 img{
-		margin-top: 3px;
-		max-height: 45px;
-		width: auto !important;
-	}
-
-  a#menu{
-  	display: inline-block;
-  	position: relative;
-  	width: 40px;
-  	height: 40px;
-  	margin: 10px;
-	}
-
-	#menuBtn{
-  	display: block;
-  	position: absolute;
-  	top: 60%;
-  	left: 50%;
-  	width: 18px;
-  	height: 2px;
-  	margin: -1px 0 0 -7px;
-  	background: #f9edb9;
-  	transition: .2s;
-	}
-
-	#menuBtn:before, #menuBtn:after{
-  	display: block;
-  	content: "";
-  	position: absolute;
-  	top: 50%;
-  	left: 0;
-  	width: 18px;
-  	height: 2px;
-  	background: #f9edb9;
-  	transition: .3s;
-	}
-
-	#menuBtn:before{
-  	margin-top: -7px;
-	}
-
-	#menuBtn:after{
-  	margin-top: 5px;
-	}
-
-	a#menu .close{
-  	background: transparent;
-	}
-
-	a#menu .close:before, a#menu .close:after{
-  	margin-top: 0;
-	}
-
-	a#menu .close:before{
-  	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);
-	}
-
-	a#menu .close:after{
-  	transform: rotate(-135deg);
-  	-webkit-transform: rotate(-135deg);
-	}
-
-	.panel{
-		width: 100%;
-		display: none;
-		overflow: hidden;
-		position: relative;
-		left: 0;
-		top: 0;
-		z-index: 100;
-	}
-
-	#mainnav{
-		position: absolute;
-		top: 0;
-		width: 100%;
-		text-align: right;
-		z-index:500;
-	}
-
-	#mainnav ul{
-		border-bottom: 1px solid #ccc;
-		background: #fff;
-		text-align: left;
-	}
-
-	#mainnav li a{
-		position: relative;
-		display:block;
-		padding:15px 25px;
-		border-bottom: 1px solid #ccc;
-		color: #000;
-		font-weight: 400;
-	}
-
-	#mainnav li a:before{
-		display: block;
-		content: "";
-		position: absolute;
-		top: 50%;
-		left: 5px;
-		width: 6px;
-		height: 6px;
-		margin: -4px 0 0 0;
-		border-top: solid 2px #000;
-		border-right: solid 2px #000;
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
-	}
-	#mainImg{
-		padding-top: 60px;
-		z-index: -100;
-	}
-	.col3 li{
-		margin: 50px auto 0 auto;
-		display: block;
-	}
-	section{
-		padding-top: 50px;
-	}
-	section h2{
-		margin: 0 auto 20px;
-	}
-	section h2 span {
-		padding: 0 30px;
-	}
-	
 }
