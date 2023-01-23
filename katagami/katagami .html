@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>みさきのホームページ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <select id="selectPhoto">
+        <option value="photo01" selected="selected">半袖</option>
+        <option value="photo02">長袖</option>
+    </select>
+
+    <ul>
+        <li id="photo01">
+          <img src="images/img01.png"width="50%" alt="半袖">
+        </li>
+        <li id="photo02">
+          <img src="images/img02.png"width="50%" alt="長袖">
+        </li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>$(function(){
+        $('#selectPhoto').change(function () {
+          //選択したoptionのvalueを取得
+          var val = $(this).val();
+          //先頭に#を付けてvalueの値をidに変換
+          var selectPhotoId = '#' + val;
+          //一度すべてのブロックを非表示にする
+          $('ul li').hide();
+          //選択したブロックのみを表示
+          $(selectPhotoId).show();
+        });
+      });</script>
+
+</body>
+</html>

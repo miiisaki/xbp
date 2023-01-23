@@ -1,0 +1,2 @@
+/* 装飾は省略 */
+ul li:nth-of-type(n+2){ display: none; }
