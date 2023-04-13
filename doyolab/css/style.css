@@ -56,6 +56,25 @@ body {
 }
 
 
+body h1 {
+  font-size: 70px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.box {
+  padding: 100px;
+  margin: 50px;
+  font-weight: bold;
+  color: #fa83bf;/*文字色*/
+  background: #FFF;
+  border: solid 3px #fa83bf;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  display: inline-block;
+}
+.box p {
+  margin: 0; 
+  padding: 0;
+}
 
 
 
