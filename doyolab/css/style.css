@@ -44,7 +44,6 @@ header {
 
 body {
   background-color: #fff8fa;
-  text-align: center;
   padding-top: 90px;
 }
 
@@ -79,6 +78,11 @@ body h1 {
   opacity: 0.8;
 }
 
+.kyoutyou{
+  border-bottom:double;/*二重線を引く*/
+  border-color:#fa83bf;
+  border-width:3px;
+}
 
 
 /*========= ナビゲーションのためのCSS ===============*/
