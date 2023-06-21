@@ -22,6 +22,10 @@ body{
     }
 
 
+/*文字*/
+
+
+
 /*リンクの色*/
 
 a{
@@ -64,6 +68,7 @@ ul{
         float: right;
         position: fixed;
         align-items: flex-end;
+        text-align: left;
     }
 
 /*右側*/

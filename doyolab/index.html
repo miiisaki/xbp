@@ -1,74 +1,103 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html>
   <head>
-    <title>doyolab</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/style.css">
+      <title>doyolab</title>
   </head>
+
 
   <body>
 
-    <header>
 
-      <h1 class="title"><img src="images/logo.jpg" width="25%" class="title"></h1>
-        <nav class="nav">
-          <ul class="menugroup">
-            <li class="menu-item"><a href="../index.html">
-              <img src="images/home.png">
-            </a></li>
-            <li class="menu-item"><a href="../de12/index.html">
-              <img src="images/de12.png">
-            </a></li>
-            <li class="menu-item"><a href="../de34/index.html">
-              <img src="images/de34.png">
-            </a></li>
-            <li class="menu-item"><a href="../de56/index.html">
-              <img src="images/de56.jpg">
-            </a></li>
-            <li class="menu-item"><a href="../digi_fab/index.html">
-              <img src="images/defab.jpg">
-            </a></li>
-            <li class="menu-item"><a href="../doyolab/index.html">
-              <img src="images/doyolab.jpg">
-            </a></li>
-            
-            <div class="openbtn menu-item"><span></span><span></span><span></span></div>
-            <nav id="g-nav">
-                <ul>
-                  <li><a href="../index.html">home</a></li> 
-                  <li><a href="kamakura.html">KAMAKURA</a></li> 
-                  <li><a href="talk.html">KADAI</a></li> 
-                  <li><a href="#">Contact</a></li> 
-                </ul>
-            </nav>
-            
+<!-- 
+    <div class="header">
+      ここにはヘッダーが入ります
+    </div> -->
 
-          </ul>
 
-        </nav>
+<!--メイン-->
 
-    </header>
+    <div class="main">
 
-    <p class="headergazou"><img src="images/header.jpg"></p>
-    
-    <h1>Project</h1>
+      <div class="main-contents">
 
-    <a href="kamakura.html"><div class="box1">
-      <p>鎌倉共創プロジェクト</p>
+        <h1 id="top">Doyolab</h1><br>
+
+        <div class="box"><a href="memo/memo.html" id="tag">メモ</a></div>
+
+        <h2 id="kamakura">鎌倉共創プロジェクト</h2>
+        <div class="box"><a href="kamakura/3_1.html" id="tag">カレンダー</a></div>
+        <div class="box"><a href="kamakura/3_2.html" id="tag">折り畳み傘</a></div>
+        <div class="box"><a href="kamakura/3_3.html" id="tag">杖</a></div>
+
+        <h2 id="akuriru">Re アクリルデザインアワード</h2>
+        <div class="box"><a href="acrylic/acrylic.html" id="tag">Re アクリルデザインアワード</a></div>
+
+        <h2 id="event">イベント</h2>
+        <div class="box"><a href="event/talk.html" id="tag">地産地消の文化とサステイナブルな暮らし</a></div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+<!--右側-->
+
+      <div class="right-navi">
+        
+      </div>
     </div>
-    </a>
 
-    <a href="talk.html"><div class="box1">
-      <p>課題</p>
-    </div>
-    </a>
+<!--左側-->
+      <div class="left-navi">
 
 
+        <ul id="page-link">
+          <li><a id="tag" href="#top">Top</a></li>
+          <li><a id="tag" href="#kamakura">Kamakura</a></li>
+          <li><a id="tag" href="#akuriru">Acrylic</a></li>
+          <li><a id="tag" href="#event">Event</a></li>
+          <li></li>
+        </ul>
 
-<!-- 右からナビが出る -->
+
+
+ 
+      </div>
+
+<!--フッター-->      
+      <div class="footer">
+        ここでは3年のゼミでの活動を記録します<br><br>
+        これまでの記録<br>
+        <a class="link_button" href="../de12/index.html">デザイン演習１・２</a>
+        /
+        <a class="link_button" href="../de34/index.html">デザイン演習３・４</a>
+        /
+        <a class="link_button" href="../de56/index.html">デザイン演習５</a>
+        /
+        <a class="link_button" href="../digi_fab/index.html">デジタルファブリケーション</a>
+      </div>
+
+
+
+      <footer id="footer"><!--footerの手前で止まるようにする-->
+        <p id="page-top"><a href="index.html">Page Top</a></p>
+        </footer>
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="files/js"></script>
+<!--自作のJS-->
+    <script src="js/1.js"></script>
   </body>
 </html>
 

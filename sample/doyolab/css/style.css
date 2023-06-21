@@ -22,6 +22,17 @@ body{
     }
 
 
+/*文字*/
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+
 /*リンクの色*/
 
 a{

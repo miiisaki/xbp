@@ -4,6 +4,7 @@ body{
         font-family:Verdana,游ゴシック体;
         background-color: white;
         color: #f7c4d4;
+        text-align: center;
     }
     .header {
         height: 150px;
@@ -20,6 +21,10 @@ body{
         float: left;
         width: 80%;
     }
+
+
+/*文字*/
+
 
 
 /*リンクの色*/
@@ -64,6 +69,7 @@ ul{
         float: right;
         position: fixed;
         align-items: flex-end;
+        text-align: left;
     }
 
 /*右側*/
