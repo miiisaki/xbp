@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <title>flaskについて 10・２０</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+
+  <body style="color: black;
+              text-align: left;">
+
+    <header>
+    </header>
+
+      <h2 style="text-align: left;color: blue;">flaskについて 10/20</h2>
+
+      <h3>クエリ文字</h3>
+        <p>urlには変数を与えることが可能である。<br>
+            maps</p><p style="color: crimson;">?q=</p><p>~</p><br>
+            <p>?q=を描くことで〜の部分に変数を加えることが可能である。</p><br>
+
+
+      
+
+      <h3>文字列の置換について</h3>
+
+          <p>
+            　csvなどを使うと,や()など必要ないものが含まれている場合が多くある。
+            その際に文字列の置換を使うことで不要なものを取り除くことが可能である。
+          </p><br>
+
+          <p>data[3]=data[3].replace("(","")</p><br>
+          <p>一つ目のダブルクォーテーションの間の(を消すことができる。</p><br>
+
+          <p>data[3]=data[3].replace("(","").replace(")","").replace(" ","")</p>
+          <p>.replace("","")を辛べてると複数の文字を消すことが可能である。</p>
+
+          <p>文字の連結</p><br>
+          <p>~+~で文字を連結することが可能である。</p>
+
+
+          <h3>文字にデータを与える。</h3>
+
+            <pre>
+              &lt;div&gt;
+          
+                  {% for data in mylist %}
+                      &lt;a href={{data[3]}}&gt;{{data[1]}}&lt;/a&gt;&lt;br&gt;
+                  {% endfor %}
+          
+              &lt;div&gt;
+            </pre><br>
+
+            <p>リストから抽出したデータにurlをつける</p>
+
+            <img src="images/2-1.png" width="50%"><br>
+
+            <p>しかしこれだと”場所”のデータがない場所にまでurlを与えてしまっている。</p>
+
+
+            <pre>
+                {% for data in mylist %}
+                  {%if data[1]=="場所"%}
+                    {{data[1]}}&lt;br&gt;
+                  {%else%}
+                  &lt;a href={{data[3]}}&gt;{{data[1]}}&lt;/a&gt;&lt;br&gt;
+                  {%endif%}
+                {% endfor %}
+
+            </pre>
+
+            <img src="images/2-2.png" width="50%"><br>
+
+            <p>if文、else文を活用することで必要な場所にだけデータを与えることが可能になる。</p>
+
+
+
+
+
+
+
+            
+
+            
+            
+
+
+   
+
+ 
+      
+      
+      
+      
+
+   
+
+
+
+  </body>
+</html>
+
