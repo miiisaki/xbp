@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <title>flaskについて 11.17</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+
+  <body style="color: black;
+              text-align: left;">
+
+    <header>
+    </header>
+
+      <h2 style="text-align: left;color: blue;">flaskについて 11/17</h2>
+
+      <p>
+        <pre>
+          <code>
+            @app.route('/input')
+          </code>
+        </pre>
+        "input"がどこにいくか
+        <pre>
+          <code>
+            @app.route('/input')
+            def move_to_input():
+                return render_template("input.html")
+          </code>
+        </pre>
+        "input.html"に移動する
+      </p>
+
+      <h3>url for</h3>
+        <p>他のところに飛んでいく命令
+          <pre>
+            <code>
+              <a href="{{url_for('move_to_input')}}">登録ページ</a>
+            </code>
+          </pre>
+        </p>
+
+
+      <h3>テキストボックスの作成</h3>
+
+        <p style="font-size: larger;">  場所<br>
+              <input type="text" name="place" size="35"><br>
+        </p>
+
+        場所&lt;br&gt;<br>
+        &lt;input type="text" name="place" size="35"&gt;
+
+
+      <h3>データの送信方法</h3>
+
+        <p>
+          Webデータの送信方法には"POST"と"GET"の２種類ある。<br>
+            POST:url２文字をつけない<br>
+            GET:?+クエリ文字
+            <pre>
+              <code>
+                @app.route('/reg', methods=["POST"])
+                def registration():
+              </code>
+            </pre>
+            
+        </p>
+
+      
+      <h3>ファイルを開く、書き込む</h3>
+        <p>
+          <code>
+            with open('./mmcsv.csv','a', newline='', encoding='utf-8') as file:
+          </code>
+
+          ()内の"a"の部分が重要である<br>
+          a:ファイルに付け足す時<br>
+          r:ファイルを開く時<br>
+          に使用する
+
+        </p>
+
+      <h3>Redirectfor</h3>
+        <code>
+          return redirect(url_for('index'))
+        </code><br>
+        ()に飛ぶ
+
+
+   
+
+            
+
+      
+      
+      
+
+   
+
+
+
+  </body>
+</html>
+
